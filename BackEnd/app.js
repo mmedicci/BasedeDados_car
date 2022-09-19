@@ -16,6 +16,6 @@ app.use(cors());
 app.use('/', cardataRoutes)
 
 mongoose.connect(`mongodb+srv://mmedicci:Tortuga11@cluster0.lai1f5l.mongodb.net/cardataDB`).then(() => {
-    app.listen(4000, () => console.log('http://localhost:4000'))
+    app.listen(4000, () => console.log('http://localhost:4000/cardata'))
 })
 

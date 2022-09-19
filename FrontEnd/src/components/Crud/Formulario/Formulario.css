@@ -1,0 +1,12 @@
+.list-button {
+    position:absolute; 
+    top:15%;
+    left:9%;   
+}
+
+.reg-title {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}

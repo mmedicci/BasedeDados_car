@@ -16,7 +16,7 @@ export default function Car({ car }) {
           <h5 className="card-title text-center">{car.model}</h5>
           <p className="card-text">Marca: {car.brand}</p>
           <p className="card-text">Año: {car.year}</p>
-          <p className="card-text">Precio: {car.price}</p>
+          <p className="card-text">Precio: R$ {car.price}</p>
         </div>
       </div>
     </div>

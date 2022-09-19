@@ -6,8 +6,6 @@ import Home from "./components/Home/Home";
 import SearchEngine from "./components/SearchEngine/SearchEngine";
 import Contact from "./components/Contact/Contact";
 import Crud from "./components/Crud/Crud";
-import CardataCreate from './components/Crud/CardataCreate/CardataCreate';
-import CardataUpdate from './components/Crud/CardataUpdate/CardataUpdate';
 import CardataList from './components/Crud/CardataList/CardataList';
 function App() {
   return (   
@@ -18,9 +16,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="SearchEngine" element={<SearchEngine />}></Route>
           <Route path="Contact" element={<Contact />}></Route>
-          <Route path="Crud" element={<Crud />}></Route>
-          <Route path="Crud/cardatacreate" element={<CardataCreate />} />
-          <Route path="Crud/cardataupdate" element={<CardataUpdate />} />
+          <Route path="Crud" element={<Crud />}></Route>          
           <Route path="Crud/cardata" element={<CardataList />} />         
 
           <Route path="*" element={<Navigate replace to="/" />}></Route>

@@ -4,30 +4,31 @@ const router = express.Router()
 
 router.use(express.json()) //vai ler as requisições no formato json
 
-// criar um registro
-router.route('/create').post((req, res) => {
-        const model = req.body.model;
-        const brand = req.body.brand;
-        const year = req.body.year;
-        const price = req.body.price;
-        
-        const newCardata = new Cardata({
-            model,
-            brand,
-            year,
-            price
-        })
-        newCardata.save();
+// Criar um registro
+router.route('/create'). post(async (req, res) => {
+    const model = req.body.model;
+    const brand = req.body.brand;
+    const year = req.body.year;
+    const price = req.body.price;
+    
+    const newCardata = new Cardata({
+        model,
+        brand,
+        year,
+        price,
+    })
+
+    await newCardata.save();
 }) 
 
-// listar a data de carros
-router.route('/cardata').get((req, res) => {
+// Listar a cardata
+router.route('/cardata').get(async (req, res) => {
     Cardata.find()
         .then(foundCardata => res.json(foundCardata))        
 })
 
-// buscar por id
-router.get('/:id', async (req, res) => {
+// Buscar por id
+router.route('/cardata/:id').get(async (req, res) => {
     try {
         const id = req.params.id
 
@@ -38,7 +39,7 @@ router.get('/:id', async (req, res) => {
     }  
 })
 
-// atualizar um registro
+// Editar um registro
 router.put('/:id', async (req, res) => {
     try {
         const id = req.params.id
@@ -63,20 +64,19 @@ router.put('/:id', async (req, res) => {
     }    
 })
 
-// remover um registro
+// Remover um registro
 router.delete('/:id', async (req, res) => {
     try {
         const id = req.params.id
-
         const cardata = await Cardata.findById(id)
-
-        if (cardata) {
+        
+     if (cardata) {
             await cardata.delete()
-            return res.status(301).json()
+            return res.status(301).json({error: false})
         }
     } catch (err) {
-        return res.status(400).json
-    } 
+        return res.status(400).json({error: true, message: err.message})
+    }   
 })
 
 module.exports = router

@@ -1,0 +1,27 @@
+.reg-button {
+    position:absolute; 
+    top: 16%;
+    left:9%;   
+}
+
+.title {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px; 
+    margin-top: 20px; 
+}
+
+.table-col {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+}
+
+.form-buttom {
+    margin-right: 15px;   
+}
+
+.form-control {
+    margin-bottom: 15px;
+
+}
+
