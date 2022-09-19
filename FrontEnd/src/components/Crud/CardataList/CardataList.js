@@ -4,6 +4,7 @@ import { Button, Table, Modal, Form } from 'react-bootstrap';
 import { IoTrashBinSharp } from 'react-icons/io5';
 import { RiEditLine } from 'react-icons/ri';
 import axios from 'axios';
+import ModEditar from '../Modal/Modal';
 import './CardataList.css';
 
 function CardataList() {
@@ -115,7 +116,7 @@ function CardataList() {
             </Table>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Atualizar</Modal.Title>
+                    <Modal.Title>Editar registro</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
@@ -145,13 +146,13 @@ function CardataList() {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="outline-success" onClick={saveEdit}>
-                        Atualizar
+                        Editar
                     </Button>
                     <Button variant="outline-secondary" onClick={handleClose}>
                         Cancel
                     </Button>
                 </Modal.Footer>
-            </Modal>           
+            </Modal>
         </div>
     )
 }
